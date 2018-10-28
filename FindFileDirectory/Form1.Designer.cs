@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.btnSelect = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.laResult = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtPath
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 21);
-            this.textBox1.TabIndex = 0;
+            this.txtPath.Location = new System.Drawing.Point(126, 18);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(165, 21);
+            this.txtPath.TabIndex = 0;
             // 
             // btnSelect
             // 
@@ -52,12 +53,13 @@
             this.btnSelect.TabIndex = 1;
             this.btnSelect.Text = "선택";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.SetPath);
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(28, 61);
+            this.listView1.Location = new System.Drawing.Point(28, 82);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(357, 205);
+            this.listView1.Size = new System.Drawing.Size(357, 184);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -96,18 +98,28 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // laResult
+            // 
+            this.laResult.AutoSize = true;
+            this.laResult.Location = new System.Drawing.Point(26, 53);
+            this.laResult.Name = "laResult";
+            this.laResult.Size = new System.Drawing.Size(73, 12);
+            this.laResult.TabIndex = 7;
+            this.laResult.Text = "검색 결과 :  ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 338);
+            this.Controls.Add(this.laResult);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtKeyword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnSelect);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPath);
             this.Name = "Form1";
             this.Text = "파일 검색";
             this.ResumeLayout(false);
@@ -117,13 +129,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtKeyword;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label laResult;
     }
 }
 
